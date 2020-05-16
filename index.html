@@ -22,9 +22,66 @@
         <link rel="stylesheet" href="lib/index.css">
     </head>
     <body>
-        
-        <div class="jumbotron container">
-            <h1 class="text-center">MASKO</h1>
+        <div class="mainbod">
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+                <a class="navbar-brand"><img src="lib/logo_nobg.png" class="img-fluid"></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navp" aria-controls="navp" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navp">
+                    <div class="nav navbar-nav ml-auto">
+                        <ul class="nav nav-pills" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="homa" href="#home" role="tab" data-toggle="pill" aria-controls="home" aria-selected="true">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="liba" href="#library" aria-controls="library" aria-selected="false">Library</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="aboa" href="#about" aria-controls="about" aria-selected="false">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="cona" href="#con" aria-controls="con" aria-selected="false">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="tab-content">
+                
+                <div class="container-fluid full tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="homa">
+                    <div class="banner"></div>
+                    <h1>Hello homepage</h1>
+                    <!-- add content -->
+                </div>
+                
+                <div class="container-fluid full tab-pane fade" id="library" role="tabpanel" aria-labelledby="liba">
+                    <div class="banner"></div>
+                    <div class="row align-items-center">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4 text-center" style="height: 20rem">
+                            <h1 class="p-3 h-25">The MASKO Library</h1>
+                            <div class="d-flex justify-content-around border border-top-0 h-40 p-5">
+                                <a href="login.html" class="btn btn-lg btn-outline-primary">Login</a>
+                                <a href="signup.html" class="btn btn-lg btn-outline-primary">Sign up</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container-fluid full tab-pane fade" id="about" role="tabpanel" aria-labelledby="aboa">
+                    <div class="banner"></div>
+                    <h1>Hello about</h1>
+                    <!-- add content -->
+                </div>
+                
+                <div class="container-fluid full tab-pane fade" id="con" role="tabpanel" aria-labelledby="cona">
+                    <div class="banner"></div>
+                    <h1>Hello contact</h1>
+                    <!-- add content -->
+                </div>
+                
+            </div>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
