@@ -9,15 +9,11 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Cutive+Mono&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://yuvrajsharma07.github.io/Web_Development_Folder/templates/Libraries/ripple_effect_v0.3/ripple_effect_v0.3/ripple_effect.min.css">
         <link rel="stylesheet" href="https://YuvrajSharma07.github.io/Web_Development_Folder/templates/animate.css">
         <link rel="stylesheet" href="lib/index.css">
     </head>
@@ -28,7 +24,7 @@
                 <div class="row">
                     <div class="col-md-3"></div>
                     <div class="col-md-6 ">
-                        <form method="lib/register.php">
+                        <form action="lib/register.php" method="post">
                             <fieldset>
                                 <legend class="p-3">Sign up</legend>
                                 <div class="row">
@@ -47,25 +43,22 @@
                                 <input class="form-control border-0 bg-light" type="password" id="password" name="password" value="" placeholder="Password">
                                 <label class="p-3" for="conpassword">Confirm Password</label><br>
                                 <input class="form-control border-0 bg-light" type="password" id="conpassword" name="conpassword" value="" placeholder="Confirm Password">
-                                <button class="btn btn-lg btn-block btn-outline-primary my-5" type="submit" value="submit">Register</button>
+                                <button class="btn btn-lg btn-block btn-outline-primary my-5" type="submit" value="submit" disabled>Register</button>
                             </fieldset>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="/__/firebase/7.14.4/firebase-app.js"></script>
-        <!-- TODO: Add SDKs for Firebase products that you want to use
-        https://firebase.google.com/docs/web/setup#available-libraries -->
-        <script src="/__/firebase/7.14.4/firebase-analytics.js"></script>
-
-        <!-- Initialize Firebase -->
-        <script src="/__/firebase/init.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-storage.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <script src="https://yuvrajsharma07.github.io/Web_Development_Folder/templates/Libraries/ripple_effect_v0.3/ripple_effect_v0.3/ripple_effect.min.js"></script>
         <script src="lib/index.js"></script>
+        <script src="lib/init.js"></script>
     </body>
 </html>
