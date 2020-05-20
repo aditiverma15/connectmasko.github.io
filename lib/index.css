@@ -109,3 +109,6 @@ footer {
 a.btn {
     font-family: 'Montserrat'
 }
+footer ul {
+    list-style-type: none
+}

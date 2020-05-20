@@ -13,6 +13,7 @@
 
 - [GitHub Pages](https://connectmasko.github.io/)
 - Heroku (no link yet)
+- [Firebase Hosting](https://connectmasko.web.app/)
 
 ### CSS pointers
 - Fonts available:
