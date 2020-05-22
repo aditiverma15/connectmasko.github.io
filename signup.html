@@ -28,6 +28,7 @@
 <!--                        <form action="" method="post">-->
                             <fieldset>
                                 <legend class="p-3">Sign up</legend>
+<!--
                                 <div class="row">
                                     <div class="col">
                                         <label class="p-3" for="fname">First Name</label><br>
@@ -38,6 +39,7 @@
                                         <input class="form-control border-0 bg-light" type="text" id="lname" name="lname" value="" placeholder="Last Name" required>
                                     </div>
                                 </div>
+-->
                                 <label class="p-3" for="email">Email</label><br>
                                 <input class="form-control border-0 bg-light" type="email" id="email" name="email" value="" placeholder="Email" required>
                                 <label class="p-3" for="password">Password</label><br>
@@ -48,19 +50,14 @@
                                 <label class="p-3" for="conpassword">Confirm Password</label><br>
                                 <input class="form-control border-0 bg-light" type="password" id="conpassword" name="conpassword" value="" placeholder="Confirm Password" required>
                                 <button class="btn btn-lg btn-block btn-outline-primary my-5" id="submit" type="submit" value="submit" disabled>Register</button>
-                                <hr>
-                                <h3 class="text-center">Sign-in using:</h3>
+                                <hr style="width: 50%">
+                                <h3 class="text-center p-3">Sign up using:</h3>
                                 <div class="row">
                                     <div class="col">
                                         <button class="btn btn-lg btn-block btn-outline-primary my-5" id="googlesignup" type="submit" value="submit"><i class="fa fa-google" aria-hidden="true"></i> Google</button>
                                     </div>
-                                    <div class="col">
-                                        <button class="btn btn-lg btn-block btn-outline-primary my-5" id="submit" type="submit" value="submit"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</button>
-                                    </div>
                                 </div>
-                                <div id="warning" class="alert alert-danger fixed-top fade" role="alert">
-                                    
-                                </div>
+                                <div id="warning" class="alert alert-danger fixed-top fade" role="alert"></div>
                             </fieldset>
 <!--                        </form>-->
                     </div>

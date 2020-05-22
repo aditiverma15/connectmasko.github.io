@@ -2,13 +2,13 @@
 
 var vHeight = $(window).height(), vWidth = $(window).width(), cover = $('.full'), halfvh = vHeight/2, thirdvh = vHeight/3, halfvw = vWidth/2.5;
 cover.css({"min-height":vHeight,"max-width":vWidth,});
+$('.banner').css({"height": $('.navbar').height() + 16,});
 
 $(document).ready(function(){
     if($(window).width() < 1000) {
         $(".nav").addClass("flex-column text-center");
     }
 });
-$('.banner').css({"height": $('.navbar').height() + 16,});
 
 // Smooth scroll
 //

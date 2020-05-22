@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,31 +20,48 @@
     </head>
     <body>
         <div class="mainbod">
-            <div class="full text-center">
-                <a class="btn btn-link p-5" href="index.html"><i class="fa fa-home" aria-hidden="true"></i> Go to the homepage</a>
-                <div class="row">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4 ">
-<!--                        <form action="lib/login.php" method="post">-->
-                            <fieldset>
-                                <legend class="p-3">Log in</legend>
-                                <label class="p-3" for="email">Email</label><br>
-                                <input class="form-control border-0 bg-light" type="email" id="email" name="email" value="" placeholder="Email">
-                                <label class="p-3" for="password">Password</label><br>
-                                <input class="form-control border-0 bg-light" type="password" id="password" name="password" value="" placeholder="Password">
-                                <button class="btn btn-lg btn-block btn-outline-primary my-5" id="submit" type="submit" value="submit">Go</button>
-                                <hr>
-                                <h3 class="text-center">Login using:</h3>
-                                <div class="row">
-                                    <div class="col">
-                                        <button class="btn btn-lg btn-block btn-outline-primary my-5" id="googlesignup" type="submit" value="submit"><i class="fa fa-google" aria-hidden="true"></i> Google</button>
-                                    </div>
-                                </div>
-                                <div id="warning" class="alert alert-danger fixed-top fade" role="alert"></div>
-                            </fieldset>
-<!--                        </form>-->
+            <nav class="navbar navbar-dark fixed-top">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navp" aria-controls="navp" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse" id="navp">
+                    <div class="nav navbar-nav ml-auto">
+                        <ul class="nav nav-pills" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="homa" href="#home" role="tab" data-toggle="pill" aria-controls="home" aria-selected="true">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="liba" href="#library" aria-controls="library" aria-selected="false">some</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="aboa" href="#about" aria-controls="about" aria-selected="false">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="cona" href="#con" aria-controls="con" aria-selected="false">Contact Us</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
+            </nav>
+            <div id="warning" class="alert alert-danger fixed-top fade" role="alert"></div>
+            <div class="tab-content">
+                
+                <div class="container-fluid full tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="homa">
+                    
+                </div>
+                
+                <div class="container-fluid full tab-pane fade" id="library" role="tabpanel" aria-labelledby="liba">
+                    
+                </div>
+                
+                <div class="container-fluid full tab-pane fade" id="about" role="tabpanel" aria-labelledby="aboa">
+                    
+                </div>
+                
+                <div class="container-fluid full tab-pane fade" id="con" role="tabpanel" aria-labelledby="cona">
+                    
+                </div>
+                
             </div>
         </div>
         <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
@@ -51,11 +69,11 @@
         <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-storage.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+        <script src="../lib/init.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="lib/index.js"></script>
-        <script src="lib/init.js"></script>
-        <script src="lib/auth.js"></script>
+        <script src="lib/user.js"></script>
     </body>
 </html>
