@@ -1,5 +1,6 @@
-/* Element standards */
-
+:root {
+    --navbar-height: auto;
+}
 body {
     position: relative
 }
@@ -33,12 +34,11 @@ footer ul {
     transition: .4s ease-out
 }
 .banner {
-    height: 5rem;
+    height: var(--navbar-height);
     width: 100%;
     position: relative
 }
 .navbar {
-    background-color: #333;
     animation: .5s fromtop ease-out;
     -webkit-animation: .5s fromtop ease-out;
     transition: .4s ease-out;
@@ -46,9 +46,6 @@ footer ul {
 .navbar a {
     cursor: pointer !important;
     transition: .1s ease-out
-}
-.navbar:hover {
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
 }
 .ferrybtn, .navbtn {
     font-size: 2rem;
@@ -111,4 +108,42 @@ footer ul {
 }
 a.btn {
     font-family: 'Montserrat'
+}
+.usernav {
+    z-index: 9999;
+    background-color: #fff;
+    display: none;
+    animation: 1s fadein ease-out;
+    -webkit-animation: 1s fadein ease-out;
+    transition: .4s ease-out;
+    overflow: auto
+}
+.usernav.fadeout {
+    animation: 1s fadeout ease-out !important;
+    -webkit-animation: 1s fadeout ease-out !important;
+}
+.usernav.show {
+    display: block !important
+}
+.closebtn {
+    cursor: pointer;
+    font-size: 3rem;
+    display: block;
+    transition: .4s ease-out;
+    border: 2px solid rgba(0,0,0,0);
+    z-index: 99999
+}
+.closebtn:hover {
+    background-color: rgba(0,0,0,0.1);
+    border: 2px solid rgba(0,0,0,0.1)
+}
+.card-img-top {
+    width: 80%;
+    border-radius: 20px;
+}
+input:read-only {
+    border-color: rgba(0,0,0,0);
+    background-color: rgba(0,0,0,0) !important;
+    width: 100%;
+    cursor: default
 }

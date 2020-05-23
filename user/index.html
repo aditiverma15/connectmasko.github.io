@@ -20,41 +20,78 @@
     </head>
     <body>
         <div class="mainbod">
-            <nav class="navbar navbar-dark fixed-top">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navp" aria-controls="navp" aria-expanded="false" aria-label="Toggle navigation">
+            <nav class="navbar p-3 navbar-dark fixed-top">
+                <button class="navbar-toggler bg-secondary" type="button">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse" id="navp">
-                    <div class="nav navbar-nav ml-auto">
-                        <ul class="nav nav-pills" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="homa" href="#home" role="tab" data-toggle="pill" aria-controls="home" aria-selected="true">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="liba" href="#library" aria-controls="library" aria-selected="false">some</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="aboa" href="#about" aria-controls="about" aria-selected="false">About Us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="cona" href="#con" aria-controls="con" aria-selected="false">Contact Us</a>
-                            </li>
-                        </ul>
+            </nav>
+            <div class="usernav p-0 full fixed-top" id="navp">
+                <div class="nav navbar-nav">
+                    <span class="closebtn px-4 pb-2 position-fixed">&times;</span>
+                    <ul class="justify-content-center p-5 full flex-column text-center nav nav-pills" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="userpa" href="#userprofile" role="tab" data-toggle="pill" aria-controls="userprofile" aria-selected="true">Your profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="papera" href="#paper" aria-controls="paper" aria-selected="false">Submit a paper</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="updates.html">Read new papers</a>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-link text-muted" disabled>News (coming soon)</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-link text-muted" disabled>Blog (coming soon)</button>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="cona" href="#con" aria-controls="con" aria-selected="false">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Go back to MASKO</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="warning" class="alert alert-danger fixed-top fade" role="alert"></div>
+            <div class="tab-content position-relative">
+                
+                <div class="container-fluid full tab-pane fade show active" id="userprofile" role="tabpanel" aria-labelledby="userpa">
+                    <div class="banner"></div>
+                    <h1 class="text-center">Your Profile</h1>
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <div class="card text-center">
+                                <div class="row">
+                                    <div class="col-md-3"></div>
+                                    <div class="col-md-6">
+                                        <div class="banner"></div>
+                                        <img class="card-img-top">
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <input class="text-center card-title" readonly><br>
+                                    <input class="text-center card-text text-muted" readonly>
+                                </div>
+                            </div>
+                            <div class="banner"></div>
+                            <div class="row">
+                                <div class="col-md-3"></div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <button type="button" class="btn btn-outline-primary col" id="editChanges"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button>
+                                        <button type="button" class="btn btn-outline-danger col" id="logOut"><i class="fa fa-power-off" aria-hidden="true"></i> Log out</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </nav>
-            <div id="warning" class="alert alert-danger fixed-top fade" role="alert"></div>
-            <div class="tab-content">
                 
-                <div class="container-fluid full tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="homa">
-                    
-                </div>
-                
-                <div class="container-fluid full tab-pane fade" id="library" role="tabpanel" aria-labelledby="liba">
-                    
-                </div>
-                
-                <div class="container-fluid full tab-pane fade" id="about" role="tabpanel" aria-labelledby="aboa">
+                <div class="container-fluid full tab-pane fade" id="paper" role="tabpanel" aria-labelledby="papera">
+                    <div class="banner"></div>
+                    <h1 class="text-center">Submit a research paper!</h1>
                     
                 </div>
                 
