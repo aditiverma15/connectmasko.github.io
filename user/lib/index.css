@@ -6,10 +6,17 @@ body {
 }
 button, a, input, textarea {
     outline: none !important;
-    cursor: pointer
+    cursor: pointer;
+    transition: .4s ease-out;
 }
 input, label, button[type="submit"] {
     font-family: 'Quicksand'
+}
+input:read-only {
+    border-color: rgba(0,0,0,0);
+    background-color: rgba(0,0,0,0) !important;
+    width: 100%;
+    cursor: default
 }
 footer {
     height: 100%;
@@ -42,6 +49,7 @@ footer ul {
     animation: .5s fromtop ease-out;
     -webkit-animation: .5s fromtop ease-out;
     transition: .4s ease-out;
+    background-color: rgba(0,0,0,0.1)
 }
 .navbar a {
     cursor: pointer !important;
@@ -116,7 +124,8 @@ a.btn {
     animation: 1s fadein ease-out;
     -webkit-animation: 1s fadein ease-out;
     transition: .4s ease-out;
-    overflow: auto
+    overflow: auto;
+    width: 100%
 }
 .usernav.fadeout {
     animation: 1s fadeout ease-out !important;
@@ -141,9 +150,15 @@ a.btn {
     width: 80%;
     border-radius: 20px;
 }
-input:read-only {
-    border-color: rgba(0,0,0,0);
-    background-color: rgba(0,0,0,0) !important;
-    width: 100%;
-    cursor: default
+.card-title {
+    font-size: 2.5rem
+}
+.fa-file-pdf-o {
+    font-size: 4rem
+}
+#userWorkRow a:hover {
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+.progress-bar {
+    transition: .4s ease-out
 }

@@ -20,12 +20,29 @@
     </head>
     <body>
         <div class="mainbod">
+            <div class="allmodals">
+                <div class="modal fade" id="loadingModal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="progress m-3">
+                                    <div class="progress-bar bg-info" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div id="uploadAlert" class="alert text-center fade" role="alert"></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" disabled>Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <nav class="navbar p-3 navbar-dark fixed-top">
                 <button class="navbar-toggler bg-secondary" type="button">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </nav>
-            <div class="usernav p-0 full fixed-top" id="navp">
+            <div class="usernav p-0 full position-fixed" id="navp">
                 <div class="nav navbar-nav">
                     <span class="closebtn px-4 pb-2 position-fixed">&times;</span>
                     <ul class="justify-content-center p-5 full flex-column text-center nav nav-pills" role="tablist">
@@ -53,12 +70,12 @@
                     </ul>
                 </div>
             </div>
-            <div id="warning" class="alert alert-danger fixed-top fade" role="alert"></div>
+            <div id="warning" class="alert alert-danger text-center fade" role="alert"></div>
             <div class="tab-content position-relative">
                 
                 <div class="container-fluid full tab-pane fade show active" id="userprofile" role="tabpanel" aria-labelledby="userpa">
                     <div class="banner"></div>
-                    <h1 class="text-center">Your Profile</h1>
+                    <h1 class="text-center p-5">Your Profile</h1>
                     <div class="row">
                         <div class="col-md-3"></div>
                         <div class="col-md-6">
@@ -72,16 +89,32 @@
                                 </div>
                                 <div class="card-body">
                                     <input class="text-center card-title" readonly><br>
-                                    <input class="text-center card-text text-muted" readonly>
+                                    <input class="text-center card-text text-muted" readonly><br>
+                                    <div class="banner"></div>
+                                    <hr>
+                                    <div class="banner"></div>
+                                    <h1 class="text-center card-title">Your work</h1>
+                                    <div class="row" id="userWorkRow">
+<!--
+                                        <div class="col-md-6">
+                                            <a href="" class="btn-outline-info text-info card" target="_blank">
+                                                <div class="card-body">
+                                                    <i class="fa fa-file-pdf-o"></i>
+                                                    <div class="card-title"></div>
+                                                </div>
+                                            </a>
+                                        </div>
+-->
+                                    </div>
                                 </div>
                             </div>
                             <div class="banner"></div>
                             <div class="row">
-                                <div class="col-md-3"></div>
-                                <div class="col-md-6">
+                                <div class="col">
                                     <div class="row">
                                         <button type="button" class="btn btn-outline-primary col" id="editChanges"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button>
-                                        <button type="button" class="btn btn-outline-danger col" id="logOut"><i class="fa fa-power-off" aria-hidden="true"></i> Log out</button>
+                                        <button type="button" class="btn btn-outline-warning col" id="logOut"><i class="fa fa-power-off" aria-hidden="true"></i> Log out</button>
+                                        <button type="button" class="btn btn-outline-danger col" id="deleteAccount"><i class="fa fa-trash" aria-hidden="true"></i> Delete Account</button>
                                     </div>
                                 </div>
                             </div>
@@ -91,15 +124,44 @@
                 
                 <div class="container-fluid full tab-pane fade" id="paper" role="tabpanel" aria-labelledby="papera">
                     <div class="banner"></div>
-                    <h1 class="text-center">Submit a research paper!</h1>
-                    
+                    <h1 class="text-center p-5">Submit a research paper!</h1>
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <div class="p-4 form-group">
+                                        <label for="nameDisplay">Name</label>
+                                        <input type="text" class="form-control" id="nameDisplay" placeholder="Your name to be displayed" value="" required>
+                                    </div>
+                                    <div class="p-4 form-group">
+                                        <label for="titleDisplay">Title</label>
+                                        <input type="text" class="form-control" id="titleDisplay" placeholder="Title to be displayed" value="" required>
+                                    </div>
+                                    <div class="p-4 form-group">
+                                        <label for="summaryDisplay">Short description/summary <span class="text-muted">(optional)</span></label>
+                                        <input type="text" class="form-control" id="summaryDisplay" placeholder="Summary to be displayed" value="">
+                                    </div>
+                                    <div class="p-4 form-group">
+                                        <label for="fileUpload">Your file</label>
+                                        <input type="file" class="bg-secondary text-white text-center p-3 border form-control-file" id="fileUpload" value="" accept="application/pdf" required>
+                                    </div>
+                                    <button type="button" class="btn btn-lg btn-outline-info" id="publish"><i class="fa fa-pencil"></i> Publish</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
+
                 <div class="container-fluid full tab-pane fade" id="con" role="tabpanel" aria-labelledby="cona">
                     
                 </div>
                 
             </div>
+            <div class="banner"></div>
+            <footer>
+                <div class="banner"></div>
+            </footer>
         </div>
         <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-database.js"></script>
