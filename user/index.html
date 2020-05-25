@@ -24,11 +24,14 @@
                 <div class="modal fade" id="loadingModal" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                         <div class="modal-content">
-                            <div class="modal-body">
+                            <div class="modal-body text-center">
                                 <div class="progress m-3">
                                     <div class="progress-bar bg-info" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
-                                <div id="uploadAlert" class="alert text-center fade" role="alert"></div>
+                                <div class="spinner-border text-info" role="status">
+                                    <span class="sr-only">Uploading</span>
+                                </div>
+                                <div id="uploadAlert" class="alert fade" role="alert"></div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal" disabled>Close</button>
@@ -88,23 +91,22 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <input class="text-center card-title" readonly><br>
-                                    <input class="text-center card-text text-muted" readonly><br>
+                                    <input class="text-center card-title username" placeholder="What do we call you?" readonly><br>
+                                    <input class="text-center card-text text-muted useremail" readonly><br>
                                     <div class="banner"></div>
                                     <hr>
                                     <div class="banner"></div>
                                     <h1 class="text-center card-title">Your work</h1>
-                                    <div class="row" id="userWorkRow">
-<!--
+                                    <div class="row userWorkRow">
                                         <div class="col-md-6">
-                                            <a href="" class="btn-outline-info text-info card" target="_blank">
+                                            <a href="" class="btn-outline-info card userLink" target="_blank">
                                                 <div class="card-body">
-                                                    <i class="fa fa-file-pdf-o"></i>
-                                                    <div class="card-title"></div>
+                                                    <i class="fa fa-file-pdf-o"></i><br>
+                                                    <h3 class="card-title">Dummy Title</h3>
+                                                    <div class="card-text">Dummy description</div>
                                                 </div>
                                             </a>
                                         </div>
--->
                                     </div>
                                 </div>
                             </div>
@@ -132,7 +134,7 @@
                                 <div class="card-body">
                                     <div class="p-4 form-group">
                                         <label for="nameDisplay">Name</label>
-                                        <input type="text" class="form-control" id="nameDisplay" placeholder="Your name to be displayed" value="" required>
+                                        <input type="text" class="form-control" id="nameDisplay" placeholder="Your name to be displayed" value="" readonly required>
                                     </div>
                                     <div class="p-4 form-group">
                                         <label for="titleDisplay">Title</label>

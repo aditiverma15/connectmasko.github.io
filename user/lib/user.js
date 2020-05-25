@@ -1,11 +1,7 @@
 (function(){
-    
     const authRoot = firebase.auth();
-    const googleAuth = new firebase.auth.GoogleAuthProvider();
     const dbRoot = firebase.database();
     const storageRootRef = firebase.storage().ref();
-    
-    const btnRegis = document.getElementById('submit');
     const warningPop = document.getElementById('warning');
     const logOutBtn = $('#logOut');
     const editChangesBtn = $('#editChanges');
@@ -33,12 +29,25 @@
             userPic = user.photoURL;
             userID = user.uid;
             $('.card-img-top').attr('src', userPic);
-            $('.card-title').attr('value', userName);
+            $('.username').attr('value', userName);
             $('#nameDisplay').attr('value', userName);
-            $('.card-text').attr('value', "<" + userMail + ">");
+            $('.useremail').attr('value', "<" + userMail + ">");
+            var usersWork = dbRoot.ref('users/').child(userID);
+            usersWork.on('child_added', snap => {
+                var userWorkURL = snap.child("link").val();
+                var userWorkTime = snap.child("time").val();
+                var userWorkTitle = snap.child("title").val();
+                var userWorkDescription = snap.child("description").val();
+                // User .after()
+                
+            });
+            usersWork.on('child_removed', snap => {
+                snap.remove();
+            });
             if(userName == null) {
-                $('.card-title').addClass('form-control');
-                $('.card-title').prop('readonly', false);
+                $('.username').addClass('form-control');
+                $('.username').prop('readonly', false);
+                $('#nameDisplay').prop('readonly', false);
                 editChangesBtn.on('click', function(){
                     user.updateProfile({
                         displayName: $('.card-title').val(),
@@ -61,7 +70,6 @@
 //                    window.location.replace('../index.html')
 //                }).catch(function (e) {displayWarning()});
             });
-            // Publish the paper
             publishBtn.on('click', function(){
                 $('#loadingModal').modal('show');
                 userFile = document.getElementById('fileUpload').files[0];
@@ -71,6 +79,7 @@
                     $('.progress-bar').css({"width": progress + "%",});
                     if(progress == 100) {
                         $('.progress-bar').addClass('bg-success');
+                        $('.spinner-border').css('display', 'none');
                         $('.progress-bar').removeClass('bg-info');
                         $('#loadingModal button').prop('disabled', false);
                         $('#uploadAlert').text('Your file has been uploaded!');
@@ -83,9 +92,23 @@
                     $('#uploadAlert').addClass('show');
                 }, function(){
                     uploadUserFile.snapshot.ref.getDownloadURL().then(function(downloadURL){
-                        // Update realtime
-                        
-//                        console.log('File available at', downloadURL);
+                        const postDate = Date.now();
+                        const newPostKey = dbRoot.ref('latest/').push().key;
+                        const userUpdate = {
+                            title: $('#titleDisplay').val(),
+                            link: downloadURL,
+                            time: postDate,
+                        };
+                        const postUpdate = {
+                            name: $('#nameDisplay').val(),
+                            title: $('#titleDisplay').val(),
+                            description: $('#summaryDisplay').val(),
+                            photo: userPic,
+                            link: downloadURL,
+                            time: postDate,
+                        };
+                        dbRoot.ref('users/' + userID + "/" + postDate).set(userUpdate);
+                        dbRoot.ref('latest/' + newPostKey).set(postUpdate);
                     });
                 });
             });

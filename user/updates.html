@@ -20,30 +20,77 @@
     </head>
     <body>
         <div class="mainbod">
-            <nav class="navbar navbar-dark fixed-top">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navp" aria-controls="navp" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse" id="navp">
-                    <div class="nav navbar-nav ml-auto">
-                        <ul class="nav nav-pills" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="homa" href="#home" role="tab" data-toggle="pill" aria-controls="home" aria-selected="true">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="liba" href="#library" aria-controls="library" aria-selected="false">some</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="aboa" href="#about" aria-controls="about" aria-selected="false">About Us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="cona" href="#con" aria-controls="con" aria-selected="false">Contact Us</a>
-                            </li>
-                        </ul>
+            <div class="allmodals">
+                <div class="modal fade" id="loadingModal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body text-center">
+                                <div class="progress m-3">
+                                    <div class="progress-bar bg-info" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="spinner-border text-info" role="status">
+                                    <span class="sr-only">Uploading</span>
+                                </div>
+                                <div id="uploadAlert" class="alert fade" role="alert"></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" disabled>Close</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
+            <nav class="navbar p-3 navbar-dark fixed-top">
+                <button class="navbar-toggler bg-secondary" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
             </nav>
+            <div class="usernav p-0 full position-fixed" id="navp">
+                <div class="nav navbar-nav">
+                    <span class="closebtn px-4 pb-2 position-fixed">&times;</span>
+                    <ul class="justify-content-center p-5 full flex-column text-center nav nav-pills" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Go to profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" id="feeda" href="#postFeed" role="tab" data-toggle="pill" aria-controls="postFeed" aria-selected="true">Your Feed</a>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-link text-muted" disabled>News (coming soon)</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-link text-muted" disabled>Blog (coming soon)</button>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="cona" href="#con" aria-controls="con" aria-selected="false">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Go back to MASKO</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
             
+            <div id="warning" class="alert alert-danger text-center fade" role="alert"></div>
+            <div class="tab-content position-relative">
+                <div class="container-fluid full tab-pane fade show active" id="postFeed" aria-labelledby="feeda">
+                    <div class="banner"></div>
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6" id="mainFeed">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid full tab-pane fade" id="con" role="tabpanel" aria-labelledby="cona">
+                    
+                </div>
+            </div>
+            
+            <div class="banner"></div>
+            <footer>
+                <div class="banner"></div>
+            </footer>
         </div>
         <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-database.js"></script>
@@ -55,6 +102,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="lib/index.js"></script>
-        <script src="../lib/update.js"></script>
+        <script src="lib/update.js"></script>
     </body>
 </html>
