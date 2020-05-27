@@ -165,7 +165,7 @@ a.btn {
 .userLink:hover {
     text-decoration: none
 }
-#mainFeed a {
-    animation: 1s fromtop ease-out;
-    -webkit-animation: 1s fromtop ease-out;
+.zoom {
+    animation: 1s zoom cubic-bezier(0.4, 0, 1, 1);
+    -webkit-animation: 1s zoom cubic-bezier(0.4, 0, 1, 1);
 }

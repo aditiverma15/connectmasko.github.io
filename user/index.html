@@ -39,6 +39,18 @@
                         </div>
                     </div>
                 </div>
+                <div class="modal fade" id="documentModal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-xl" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body text-center">
+                                <p id="testingfield"></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" disabled>Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <nav class="navbar p-3 navbar-dark fixed-top">
                 <button class="navbar-toggler bg-secondary" type="button">
@@ -56,7 +68,7 @@
                             <a class="nav-link" id="papera" href="#paper" aria-controls="paper" aria-selected="false">Submit a paper</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="updates.html">Read new papers</a>
+                            <a class="nav-link" id="feeda" href="#postFeed" role="tab" data-toggle="pill" aria-controls="postFeed" aria-selected="true">Your Feed</a>
                         </li>
                         <li class="nav-item">
                             <button class="btn btn-link text-muted" disabled>News (coming soon)</button>
@@ -97,17 +109,7 @@
                                     <hr>
                                     <div class="banner"></div>
                                     <h1 class="text-center card-title">Your work</h1>
-                                    <div class="row userWorkRow">
-                                        <div class="col-md-6">
-                                            <a href="" class="btn-outline-info card userLink" target="_blank">
-                                                <div class="card-body">
-                                                    <i class="fa fa-file-pdf-o"></i><br>
-                                                    <h3 class="card-title">Dummy Title</h3>
-                                                    <div class="card-text">Dummy description</div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
+                                    <div class="d-flex justify-content-around flex-wrap userWorkRow"></div>
                                 </div>
                             </div>
                             <div class="banner"></div>
@@ -154,7 +156,17 @@
                         </div>
                     </div>
                 </div>
-
+                <div class="container-fluid full tab-pane fade" role="tabpanel" id="postFeed" aria-labelledby="feeda">
+                    <div class="banner"></div>
+                    <h1 class="text-center">Your feed</h1>
+                    <div class="banner"></div>
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6" id="mainFeed">
+                            
+                        </div>
+                    </div>
+                </div>
                 <div class="container-fluid full tab-pane fade" id="con" role="tabpanel" aria-labelledby="cona">
                     
                 </div>
@@ -165,16 +177,18 @@
                 <div class="banner"></div>
             </footer>
         </div>
-        <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-database.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-storage.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.4.456/build/pdf.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-storage.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-analytics.js"></script>
         <script src="../lib/init.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="lib/index.js"></script>
         <script src="lib/user.js"></script>
+        <script src="lib/update.js"></script>
     </body>
 </html>

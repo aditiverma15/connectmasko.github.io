@@ -11,16 +11,6 @@
     function refreshPage(){
         window.location.reload();
     };
-    function displayWarning() {
-        warningPop.innerHTML = e.message;
-        if (e.message != '') {
-            warningPop.classList.add('show');
-            warningPop.classList.add('fixed-bottom');
-        } else {
-            warningPop.classList.remove('show');
-            warningPop.classList.remove('fixed-bottom');
-        }
-    };
     
     authRoot.onAuthStateChanged(function(user){
         if(user){
@@ -37,32 +27,57 @@
                 var userWorkURL = snap.child("link").val();
                 var userWorkTime = snap.child("time").val();
                 var userWorkTitle = snap.child("title").val();
-                var userWorkDescription = snap.child("description").val();
-                // User .after()
-                
+                $('.userWorkRow').append('<div class="col-md-5 m-1 zoom"><a href="'+ userWorkURL +'" class="btn-outline-info card userLink" target="_blank"><div class="card-body"><i class="fa fa-file-pdf-o pb-3"></i><h5 class="card-title">'+ userWorkTitle +'</h5><div class="card-text">'+ new Date(userWorkTime) +'</div></div></a></div>');
             });
             usersWork.on('child_removed', snap => {
                 snap.remove();
             });
-            if(userName == null) {
+            if (userName == null) {
                 $('.username').addClass('form-control');
                 $('.username').prop('readonly', false);
                 $('#nameDisplay').prop('readonly', false);
-                editChangesBtn.on('click', function(){
+                editChangesBtn.on('click', function () {
                     user.updateProfile({
                         displayName: $('.card-title').val(),
-                    }).then().catch(function (e) {displayWarning()});
+                    }).then().catch(function (e) {
+                        warningPop.innerHTML = e.message;
+                        if (e.message != '') {
+                            warningPop.classList.add('show');
+                            warningPop.classList.add('fixed-bottom');
+                        } else {
+                            warningPop.classList.remove('show');
+                            warningPop.classList.remove('fixed-bottom');
+                        }
+                    });
                 });
             };
             if (userPic == null) {
                 user.updateProfile({
                     photoURL: "./lib/user.png",
-                }).then().catch(function(e){displayWarning()});
+                }).then().catch(function (e) {
+                    warningPop.innerHTML = e.message;
+                    if (e.message != '') {
+                        warningPop.classList.add('show');
+                        warningPop.classList.add('fixed-bottom');
+                    } else {
+                        warningPop.classList.remove('show');
+                        warningPop.classList.remove('fixed-bottom');
+                    }
+                });
             };
-            logOutBtn.on('click', function(){
-                authRoot.signOut().then(function(){
+            logOutBtn.on('click', function () {
+                authRoot.signOut().then(function () {
                     window.location.replace('../index.html')
-                }).catch(function (e) {displayWarning()});
+                }).catch(function (e) {
+                    warningPop.innerHTML = e.message;
+                    if (e.message != '') {
+                        warningPop.classList.add('show');
+                        warningPop.classList.add('fixed-bottom');
+                    } else {
+                        warningPop.classList.remove('show');
+                        warningPop.classList.remove('fixed-bottom');
+                    }
+                });
             });
             // Delete account
             deleteAccountBtn.on('click', function(){
@@ -116,5 +131,14 @@
             window.location.replace('../index.html');
         };
     });
-    authRoot.setPersistence(firebase.auth.Auth.Persistence.LOCAL).then(function(){}).catch(function(e){displayWarning()});
+    authRoot.setPersistence(firebase.auth.Auth.Persistence.LOCAL).then(function(){}).catch(function(e){
+        warningPop.innerHTML = e.message;
+        if (e.message != '') {
+            warningPop.classList.add('show');
+            warningPop.classList.add('fixed-bottom');
+        } else {
+            warningPop.classList.remove('show');
+            warningPop.classList.remove('fixed-bottom');
+        }
+    });
 }())

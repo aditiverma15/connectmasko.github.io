@@ -22,16 +22,11 @@
         <div class="mainbod">
             <div class="allmodals">
                 <div class="modal fade" id="loadingModal" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal fade" id="documentModal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
                         <div class="modal-content">
                             <div class="modal-body text-center">
-                                <div class="progress m-3">
-                                    <div class="progress-bar bg-info" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="spinner-border text-info" role="status">
-                                    <span class="sr-only">Uploading</span>
-                                </div>
-                                <div id="uploadAlert" class="alert fade" role="alert"></div>
+                                
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal" disabled>Close</button>
@@ -92,16 +87,17 @@
                 <div class="banner"></div>
             </footer>
         </div>
-        <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-database.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-storage.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.4.456/build/pdf.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-storage.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-analytics.js"></script>
         <script src="../lib/init.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="lib/index.js"></script>
-        <script src="lib/update.js"></script>
+        <script src="lib/obfuscated.js"></script>
     </body>
 </html>
