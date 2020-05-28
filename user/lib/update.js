@@ -20,16 +20,18 @@
                     var second = d.getSeconds();
                     var publishedOn = n + "/" + m + "/" + y + " (" + hour + ":" + minute + ":" + second + ")";
                 $('#mainFeed').prepend('<a id="'+ snap.key +'" class="card mb-3 text-dark zoom" target="_blank"><div class="row no-gutters"><div class="col-4 p-md-3 d-flex align-items-center"><img src="' + snap.child("photo").val() + '" class="card-img rounded-circle" alt="User"></div><div class="col-8"><div class="card-body"><h5 class="card-title">' + snap.child("title").val() + '</h5><p class="card-text">' + snap.child("description").val() + '</p><p class="card-text"><small class="text-muted">' + publishedOn + ' by ' + snap.child("name").val() + '</small></p></div></div></div></a>');
+                // https://www.youtube.com/watch?v=ydCSSgwZjzs
                 pdfjsLib.getDocument(snap.child('link').val()).then(function(doc){
-                    
+                    console.log(doc._pdfInfo.numPages);
                 });
+                
                 $("#" + snap.key).on('click', function(){
                     $('#documentModal').modal('show');
-//                    $('#testingfield').text(snap.child("link").val())  // it works
+                    
                 });
             });
         } else {
             window.location.replace('../index.html');
         }
-    })
-}())
+    });
+}());

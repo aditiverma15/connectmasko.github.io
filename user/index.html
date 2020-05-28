@@ -28,13 +28,13 @@
                                 <div class="progress m-3">
                                     <div class="progress-bar bg-info" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
-                                <div class="spinner-border text-info" role="status">
+                                <div class="spinner-border text-info fade show" role="status">
                                     <span class="sr-only">Uploading</span>
                                 </div>
                                 <div id="uploadAlert" class="alert fade" role="alert"></div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal" disabled>Close</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
@@ -46,7 +46,26 @@
                                 <p id="testingfield"></p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal" disabled>Close</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="deleteAccountModal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body text-center">
+                                <div class="alert alert-danger" role="alert">
+                                    You are about to delete your account! Your data will be lost and you will no longer be able to access any of the perks of the library thereof. Are you sure you want to continue?
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="confirmDelete">
+                                        <label class="form-check-label" for="confirmDelete">Yes, I am sure.</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-primary btn-lg" data-dismiss="modal">I rather won't</button>
+                                <button type="button" class="btn btn-outline-danger btn-lg" disabled>Bye!</button>
                             </div>
                         </div>
                     </div>
@@ -65,7 +84,7 @@
                             <a class="nav-link active" id="userpa" href="#userprofile" role="tab" data-toggle="pill" aria-controls="userprofile" aria-selected="true">Your profile</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="papera" href="#paper" aria-controls="paper" aria-selected="false">Submit a paper</a>
+                            <a class="nav-link" id="papera" href="#paper" role="tab" aria-controls="paper" aria-selected="false">Submit a paper</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="feeda" href="#postFeed" role="tab" data-toggle="pill" aria-controls="postFeed" aria-selected="true">Your Feed</a>
@@ -77,7 +96,7 @@
                             <button class="btn btn-link text-muted" disabled>Blog (coming soon)</button>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="cona" href="#con" aria-controls="con" aria-selected="false">Contact Us</a>
+                            <a class="nav-link" id="cona" href="#con" role="tab" aria-controls="con" aria-selected="false">Contact Us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../index.html">Go back to MASKO</a>
@@ -126,7 +145,7 @@
                     </div>
                 </div>
                 
-                <div class="container-fluid full tab-pane fade" id="paper" role="tabpanel" aria-labelledby="papera">
+                <div class="container-fluid full tab-pane fade" role="tabpanel" id="paper" aria-labelledby="papera">
                     <div class="banner"></div>
                     <h1 class="text-center p-5">Submit a research paper!</h1>
                     <div class="row">
@@ -156,9 +175,10 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="container-fluid full tab-pane fade" role="tabpanel" id="postFeed" aria-labelledby="feeda">
                     <div class="banner"></div>
-                    <h1 class="text-center">Your feed</h1>
+                    <h1 class="text-center p-5">Your feed</h1>
                     <div class="banner"></div>
                     <div class="row">
                         <div class="col-md-3"></div>
@@ -167,7 +187,10 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="container-fluid full tab-pane fade" id="con" role="tabpanel" aria-labelledby="cona">
+                    <div class="banner"></div>
+                    <h1 class="text-center p-5">Contact Us</h1>
                     
                 </div>
                 

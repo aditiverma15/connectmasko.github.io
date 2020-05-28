@@ -79,11 +79,28 @@
                     }
                 });
             });
-            // Delete account
             deleteAccountBtn.on('click', function(){
-//                user.delete().then(function(){
-//                    window.location.replace('../index.html')
-//                }).catch(function (e) {displayWarning()});
+                $("#deleteAccountModal").modal('show');
+                $("#confirmDelete").on('input', function(){
+                    if($(this).prop('checked', true)){
+                        $("#deleteAccountModal .btn-outline-danger").prop('disabled', false);
+                    }
+                    $("#deleteAccountModal .btn-outline-danger").on('click', function () {
+//                        dbRoot.ref('users/' + userID).remove(); // Remove the user's data stored in DB
+                        user.delete().then(function () {
+                            window.location.replace('../index.html')
+                        }).catch(function (e) {
+                            warningPop.innerHTML = e.message;
+                            if (e.message != '') {
+                                warningPop.classList.add('show');
+                                warningPop.classList.add('fixed-bottom');
+                            } else {
+                                warningPop.classList.remove('show');
+                                warningPop.classList.remove('fixed-bottom');
+                            }
+                        });
+                    });
+                });
             });
             publishBtn.on('click', function(){
                 $('#loadingModal').modal('show');
@@ -94,13 +111,19 @@
                     $('.progress-bar').css({"width": progress + "%",});
                     if(progress == 100) {
                         $('.progress-bar').addClass('bg-success');
-                        $('.spinner-border').css('display', 'none');
+                        $('.spinner-border').removeClass('show');
                         $('.progress-bar').removeClass('bg-info');
-                        $('#loadingModal button').prop('disabled', false);
                         $('#uploadAlert').text('Your file has been uploaded!');
                         $('#uploadAlert').addClass('alert-success');
                         $('#uploadAlert').addClass('show');
                     }
+                    $('#loadingModal').on('hide.bs.modal', function(){
+                        $('.progress-bar').removeClass('bg-success');
+                        $('.progress-bar').addClass('bg-info');
+                        $('#uploadAlert').removeClass('show');
+                        $('#uploadAlert').removeClass('alert-success');
+                        $('.spinner-border').addClass('show');
+                    });
                 }, function(error){
                     $('#uploadAlert').text(error.message);
                     $('#uploadAlert').addClass('alert-danger');

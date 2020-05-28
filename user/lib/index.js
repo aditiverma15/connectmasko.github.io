@@ -34,6 +34,15 @@ $('.nav-link').each(function(){
         }, 1000);
     })
 });
+$(document).ready(function(){
+	$('a[role="tab"]').on('show.bs.tab', function(e) {
+		localStorage.setItem('activeTab', $(e.target).attr('href'));
+	});
+	var activeTab = localStorage.getItem('activeTab');
+	if(activeTab){
+		$('.nav-pills a[href="' + activeTab + '"]').tab('show');
+	}
+});
 // Password confirmation
 $('#passtoggle').on('click', function(){
     $('input[type="password"]').attr('type') ? 
