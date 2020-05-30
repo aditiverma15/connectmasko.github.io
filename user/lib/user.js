@@ -110,24 +110,19 @@
                     var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
                     $('.progress-bar').css({"width": progress + "%",});
                     if(progress == 100) {
-                        $('.progress-bar').addClass('bg-success');
+                        $('.progress-bar').addClass('bg-success').removeClass('bg-info');
                         $('.spinner-border').removeClass('show');
-                        $('.progress-bar').removeClass('bg-info');
                         $('#uploadAlert').text('Your file has been uploaded!');
-                        $('#uploadAlert').addClass('alert-success');
-                        $('#uploadAlert').addClass('show');
+                        $('#uploadAlert').addClass('alert-success show');
                     }
                     $('#loadingModal').on('hide.bs.modal', function(){
-                        $('.progress-bar').removeClass('bg-success');
-                        $('.progress-bar').addClass('bg-info');
-                        $('#uploadAlert').removeClass('show');
-                        $('#uploadAlert').removeClass('alert-success');
+                        $('.progress-bar').removeClass('bg-success').addClass('bg-info');
+                        $('#uploadAlert').removeClass('alert-success show');
                         $('.spinner-border').addClass('show');
                     });
                 }, function(error){
                     $('#uploadAlert').text(error.message);
-                    $('#uploadAlert').addClass('alert-danger');
-                    $('#uploadAlert').addClass('show');
+                    $('#uploadAlert').addClass('alert-danger show');
                 }, function(){
                     uploadUserFile.snapshot.ref.getDownloadURL().then(function(downloadURL){
                         const postDate = Date.now();

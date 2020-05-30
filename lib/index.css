@@ -3,17 +3,19 @@ body {
 }
 button, a, input, textarea {
     outline: none !important;
-    cursor: pointer
+    cursor: pointer;
+    font-family: 'Quicksand'
 }
-input, label, button[type="submit"] {
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Comfortaa'
+}
+div, p, span, header, footer {
     font-family: 'Quicksand'
 }
 footer {
     height: 100%;
     width: 100%;
-    padding: 4rem;
     border-top: 1px rgba(0,0,0,0.3) solid;
-    background-color: rgba(0,0,0,0.1);
 }
 footer ul {
     list-style-type: none
@@ -36,7 +38,6 @@ footer ul {
     position: relative
 }
 .navbar {
-    background-color: #333;
     animation: .5s fromtop ease-out;
     -webkit-animation: .5s fromtop ease-out;
     transition: .4s ease-out;
@@ -107,6 +108,41 @@ footer ul {
     -ms-transform: translate(-50%, -50%);
     font-family: 'Quicksand'
 }
-a.btn {
-    font-family: 'Montserrat'
+.line-1{
+    width: 100%;
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: 4s typewriter ease-out;
+    -webkit-animation: 4s typewriter ease-out;
 }
+.services .card {
+    width: 40%;
+    transition: .4s ease-out
+}
+.services .card:hover {
+    color: #fff;
+    background-color: #444;
+}
+.card-header {
+    border: 0;
+    text-align: center;
+    padding: 1rem;
+}
+.card:hover .card-header {
+    background-color: rgba(0,0,0,0.1)
+}
+.nav-pills .nav-link.active {
+    background-color: rgba(0,0,0,0.15);
+    padding: .7rem
+}
+.carouselCon {
+    font-size: 3rem
+}
+@media only screen and (max-width: 1000px) {
+    .line-1 {
+        white-space: normal;
+    }
+}
+@keyframes typewriter{from{width: 0;}to{width: 100%;}}
+@-webkit-keyframes typewriter{from{width: 0;}to{width: 100%;}}
