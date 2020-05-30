@@ -1,5 +1,3 @@
-/* Element standards */
-
 body {
     position: relative
 }
@@ -22,7 +20,7 @@ footer ul {
 }
 /* Classes */
 .full {
-    padding: 1rem;
+    padding: 0;
     position: relative;
     height: 100%;
     overflow: hidden

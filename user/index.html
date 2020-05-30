@@ -42,8 +42,14 @@
                 <div class="modal fade" id="documentModal" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog modal-xl" role="document">
                         <div class="modal-content">
+                            <div class="modal-header p-5">
+                                <h1 class="modal-title" id="documentTitle"></h1>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </div>
                             <div class="modal-body text-center">
-                                <p id="testingfield"></p>
+                                <div id="documentRender">
+
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -200,7 +206,6 @@
                 <div class="banner"></div>
             </footer>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.4.456/build/pdf.min.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-database.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
@@ -212,6 +217,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="lib/index.js"></script>
         <script src="lib/user.js"></script>
+        <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
         <script src="lib/update.js"></script>
     </body>
 </html>
