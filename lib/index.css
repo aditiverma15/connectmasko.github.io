@@ -16,6 +16,7 @@ footer {
     height: 100%;
     width: 100%;
     border-top: 1px rgba(0,0,0,0.3) solid;
+    color: #333
 }
 footer ul {
     list-style-type: none
@@ -47,8 +48,9 @@ footer ul {
     transition: .1s ease-out
 }
 .navbar:hover {
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
 }
+
 .ferrybtn, .navbtn {
     font-size: 2rem;
     cursor: pointer;
@@ -138,6 +140,10 @@ footer ul {
 }
 .carouselCon {
     font-size: 3rem
+}
+/*Dark mode*/
+body.bg-dark .navbar {
+    background-color: #333 !important;
 }
 @media only screen and (max-width: 1000px) {
     .line-1 {

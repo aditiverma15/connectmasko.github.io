@@ -24,6 +24,7 @@ footer {
     padding: 4rem;
     border-top: 1px rgba(0,0,0,0.3) solid;
     background-color: rgba(0,0,0,0.1);
+    color: #333 !important
 }
 footer ul {
     list-style-type: none
@@ -151,10 +152,10 @@ a.btn {
     border-radius: 20px;
 }
 .username {
-    font-size: 2.5rem
+    font-size: 2rem
 }
 .fa-file-pdf-o {
-    font-size: 4rem
+    font-size: 3rem
 }
 #userWorkRow a:hover, #mainFeed a:hover {
     box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
