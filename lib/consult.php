@@ -3,7 +3,7 @@
 $firstname = $_POST["fname"];
 $lastname = $_POST["lname"];
 $email = $_POST["email"];
-$password = $_POST["password"];
+$phonenumber = $_POST["phone"];
 $name = $firstname." ".$lastname;
 
 
@@ -100,7 +100,7 @@ font-family: Futura, sans-serif, Verdana;
                                 <table width="100%" bgcolor="#0a9687">
                                     <tr>
                                         <td>
-                                            <h1 style="padding: 10px;text-align: center;color: floralwhite;font-size: 40px">Welcome aboard, '.$name.'!</h1>
+                                            <h1 style="padding: 10px;text-align: center;color: floralwhite;font-size: 40px">You have reached us '.$name.'!</h1>
                                         </td>
                                     </tr>
                                 </table>
@@ -111,28 +111,17 @@ font-family: Futura, sans-serif, Verdana;
                                 <table width="100%" bgcolor="#ddd">
                                     <tr>
                                         <td>
-                                            <p>You have successfully registered to the MASKO Library, we are looking forward for you to start publishing your papers and do a lot of amazing stuff on our platform!</p>
+                                            <p>You have successfully reached us for a consultation. We will reach out to you shortly via your provided mobile number!</p>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <p>Account details: <br>
+                                            <p>Your details: <br>
                                                 '.$name.'<br>
                                                 '.$email.'<br>
-                                                '.$password.'<br>
+                                                '.$phonenumber.'<br>
                                             </p>
                                         </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <table width="100%" bgcolor="#ddd">
-                                    <tr>
-                                        <td><center><a href="#" target="_blank">Hope on to your profile!</a></center></td>
-                                        <td><center><a href="#" target="_blank">Publish a paper!</a></center></td>
-                                        <td><center><a href="#" target="_blank">Go through a paper!</a></center></td>
                                     </tr>
                                 </table>
                             </td>
@@ -156,7 +145,39 @@ font-family: Futura, sans-serif, Verdana;
 </html>
 ';
 $headers = "MIME-Version: 1.0" . "\r\n"."Content-type:text/html;charset=UTF-8" ."\r\n"."From: Admin";
-$subject = "Welcome to the MASKO Library!";
+$subject = "Welcome to the MASKO Consultation!";
+$admins = "connect.masko@gmail.com";
+$notifhead = "You have a new lead!";
+$notifbod = "You have received a form submission. View it here: <a target='_blank' href='https://docs.google.com/spreadsheets/d/1El9VLaq1eYh4cP6LDpIgfCpos58XzEmPIqWJ6ybtpes/edit?usp=sharing'>https://docs.google.com/spreadsheets/d/1El9VLaq1eYh4cP6LDpIgfCpos58XzEmPIqWJ6ybtpes/edit?usp=sharing</a>";
+$file_open = fopen("consultation.csv", "a");
+$no_rows = count(file("consultation.csv"));
+if($no_rows > 1){
+    $no_rows = ($no_rows - 1) + 1;
+}
+$form_data = array(
+    'sr_no'  => $no_rows,
+    'name'  => $name,
+    'email'  => $email,
+    'phone' => $phonenumber
+);
+fputcsv($file_open, $form_data);
 mail($email, $subject, $message, $headers);
-header('Location: https://yuvishere.co');
+mail($admins, $notifhead, $notifbod, $headers);
+echo '
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="MASKO">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Thank you!</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body class="jumbotron container d-flex align-items-center justify-content-center">
+	<h1 class="text-center">We will reach out to you shortly, '.$name.'</h1>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
+';
 ?>

@@ -133,15 +133,25 @@ footer ul {
 .card:hover .card-header {
     background-color: rgba(0,0,0,0.1)
 }
-.nav-pills .nav-link.active {
-    background-color: rgba(0,0,0,0.15);
+.nav-pills .nav-link.active, .dropdown-item.active {
+    background-color: rgba(0,0,0,0.2);
     padding: .7rem
+}
+.dropdown-item.active {
+    color: #000;
+    padding: .25rem 1.5rem
 }
 .carouselCon {
     font-size: 3rem
 }
-body.bg-dark .navbar {
+body.bg-dark .navbar, body.bg-dark .dropdown-menu {
     background-color: #333 !important;
+}
+body.bg-dark .dropdown-menu a:hover {
+    background-color: rgba(0,0,0,0.1)
+}
+body.bg-dark .dropdown-menu a {
+    color: #fff
 }
 body.bg-dark .services .card {
     background-color: #607d8b
