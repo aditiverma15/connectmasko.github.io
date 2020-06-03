@@ -9,22 +9,6 @@ function closeUsernav(){
         $('body').css('overflow', 'auto');
     }, 800);
 };
-// Smooth scroll
-//
-//$(document).ready(function (){
-//    $(".navbtn").click(function (){
-//        $('html, body').animate({
-//            scrollTop: $("#home").offset().top
-//        }, 1000);
-//    });
-//});
-//$(document).ready(function (){
-//    $(".ferrybtn").click(function (){
-//        $('html, body').animate({
-//            scrollTop: $("#intro").offset().top
-//        }, 1000);
-//    });
-//});
 $('.nav-link').each(function(){
     $(this).click(function(){
         $(this).tab("show");
@@ -43,7 +27,6 @@ $(document).ready(function(){
 		$('.nav-pills a[href="' + activeTab + '"]').tab('show');
 	}
 });
-// Password confirmation
 $('#passtoggle').on('click', function(){
     $('input[type="password"]').attr('type') ? 
     $('input[type="password').removeAttr('type') : $('input[type="password').attr('type', 'password');

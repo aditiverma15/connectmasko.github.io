@@ -16,12 +16,11 @@ footer {
     height: 100%;
     width: 100%;
     border-top: 1px rgba(0,0,0,0.3) solid;
-    color: #333
+    background-color: rgba(0,0,0,0.3) !important
 }
 footer ul {
     list-style-type: none
 }
-/* Classes */
 .full {
     padding: 0;
     position: relative;
@@ -141,10 +140,16 @@ footer ul {
 .carouselCon {
     font-size: 3rem
 }
-/*Dark mode*/
 body.bg-dark .navbar {
     background-color: #333 !important;
 }
+body.bg-dark .services .card {
+    background-color: #607d8b
+}
+.text-dark.text-white-50:hover, .text-dark.text-white-50:focus {
+    color: rgba(255,255,255,0.8) !important
+}
+
 @media only screen and (max-width: 1000px) {
     .line-1 {
         white-space: normal;
