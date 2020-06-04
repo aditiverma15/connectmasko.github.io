@@ -12,7 +12,7 @@
 ### Deployed on
 
 - [GitHub Pages](https://connectmasko.github.io/)
-- Heroku (no link yet)
+- [Heroku](https://connectmasko.herokuapp.com/)
 - [Firebase Hosting](https://stately-diagram-277413.web.app)
 
 ### CSS pointers
