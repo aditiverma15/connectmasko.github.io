@@ -5,9 +5,6 @@ $lastname = $_POST["lname"];
 $email = $_POST["email"];
 $phonenumber = $_POST["phone"];
 $name = $firstname." ".$lastname;
-
-
-// Confirmation mail
 $message = '
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="https://www.w3.org/1999/xhtml">
@@ -148,7 +145,7 @@ $headers = "MIME-Version: 1.0" . "\r\n"."Content-type:text/html;charset=UTF-8" .
 $subject = "Welcome to the MASKO Consultation!";
 $admins = "connect.masko@gmail.com";
 $notifhead = "You have a new lead!";
-$notifbod = "You have received a form submission. View it here: <a target='_blank' href='https://docs.google.com/spreadsheets/d/1El9VLaq1eYh4cP6LDpIgfCpos58XzEmPIqWJ6ybtpes/edit?usp=sharing'>https://docs.google.com/spreadsheets/d/1El9VLaq1eYh4cP6LDpIgfCpos58XzEmPIqWJ6ybtpes/edit?usp=sharing</a>";
+$notifbod = "You have received a form submission. View it here: <a target='_blank' href='https://www.connectmasko.co/restrict.html'>Click Here.</a>";
 $file_open = fopen("consultation.csv", "a");
 $no_rows = count(file("consultation.csv"));
 if($no_rows > 1){
@@ -169,14 +166,32 @@ echo '
 	<meta charset="utf-8">
 	<meta name="author" content="MASKO">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="refresh" content="3; url=../index.html">
 	<title>Thank you!</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body class="jumbotron container d-flex align-items-center justify-content-center">
-	<h1 class="text-center">We will reach out to you shortly, '.$name.'</h1>
+<body class="jumbotron container" onpageshow="thankredirect()">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <h1 class="text-center">We will reach out to you shortly, '.$name.'</h1><br><br>
+            <div class="text-muted">You will be redirected to the <a class="text-dark" href="../index.html">homepage</a> in <span id="cntdown"></span></div>
+        </div>
+    </div>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+    function thankredirect(){
+        var i = 3;
+        setInterval(function(){
+        document.getElementById("cntdown").innerHTML = i;
+        if(i > 0) {
+        i--;
+        };
+        }, 1000);
+    };
+    </script>
 </body>
 </html>
 ';
